@@ -1,0 +1,21 @@
+{
+  "name": "bookshelf",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Deepak"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/erdahuja/bookshelf-node-express",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0"
+  }
+}
