@@ -17,10 +17,10 @@ app.get('/books',function(req,res){
 	res.send('hello books');
 
 });
+var port = process.env.PORT||9000;
+
+app.listen(port,function(err){
 
 
-app.listen(9000,function(err){
-
-
-	console.log('running server on ',9000);
+	console.log('running server on ',port);
 });
