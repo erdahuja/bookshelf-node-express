@@ -23,9 +23,10 @@
     "express-handlebars": "^3.0.0",
     "handlebars": "^4.0.10",
     "jade": "^1.11.0",
-    "mssql": "^4.0.4",
+    "mongodb": "^2.2.31",
     "mysql": "^2.14.1",
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.11.0",
+    "prettyjson": "^1.2.1"
   },
   "devDependencies": {
     "gulp": "^3.9.1",

@@ -2,6 +2,7 @@ var express=require('express');
 var ejs  = require('ejs');
 var sql = require('mysql');
 
+
 var app= express();
 
 const config = {
@@ -21,7 +22,7 @@ connect.connect(function(err) {
 		return;
 	}
 
-	console.log('connected as id ' + connect.threadId);
+
 });
 
 module.exports  = connect;
@@ -40,6 +41,7 @@ var nav=[
 
 ];
 var bookRouter  = require('./src/routes/bookRoutes')(nav);
+var adminRouter  = require('./src/routes/adminRoutes')(nav);
 
 app.use(express.static('public'));
 app.set('views','./src/views');
@@ -58,6 +60,8 @@ app.get('/',function(req,res){
 
 });
 app.use('/books',bookRouter);
+
+app.use('/admin',adminRouter);
 
 
 app.get('/authors',function(req,res){
