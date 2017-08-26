@@ -42,6 +42,7 @@ var nav=[
 ];
 var bookRouter  = require('./src/routes/bookRoutes')(nav);
 var adminRouter  = require('./src/routes/adminRoutes')(nav);
+var authRouter  = require('./src/routes/adminRoutes')(nav);
 
 app.use(express.static('public'));
 app.set('views','./src/views');
@@ -62,6 +63,7 @@ app.get('/',function(req,res){
 app.use('/books',bookRouter);
 
 app.use('/admin',adminRouter);
+app.use('/auth',authRouter);
 
 
 app.get('/authors',function(req,res){
