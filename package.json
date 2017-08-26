@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "start": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,13 @@
   },
   "homepage": "https://github.com/erdahuja/bookshelf-node-express#readme",
   "dependencies": {
+    "ejs": "^2.5.7",
     "express": "^4.15.4",
+    "express-handlebars": "^3.0.0",
+    "handlebars": "^4.0.10",
+    "jade": "^1.11.0",
+    "mssql": "^4.0.4",
+    "mysql": "^2.14.1",
     "nodemon": "^1.11.0"
   },
   "devDependencies": {
