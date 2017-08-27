@@ -13,6 +13,16 @@ var router = function(nav){
 	.post(function(req,res){
 
 
+		mongodb.connect('mongodb://localhost:27017/books',function(err,db){
+
+			console.log(req.body);
+			// var coll = db.collection('auth');
+			// coll.insert({}).toArray(function(err,user){
+			// 	console.log("user created");
+
+
+			// });
+		})
 
 
 	})

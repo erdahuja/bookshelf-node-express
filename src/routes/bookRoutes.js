@@ -43,7 +43,7 @@ var router=function(nav){
 			var coll = db.collection('books');
 			coll.find({_id:id}).toArray(function(err,books){
 
-				console.log(books);
+				
 				res.render('bookView',{
 					title:'Books',
 					nav:nav,

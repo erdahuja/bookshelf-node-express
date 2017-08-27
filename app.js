@@ -1,6 +1,9 @@
 var express=require('express');
 var ejs  = require('ejs');
 var sql = require('mysql');
+var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
+var session = require('express-session');
 
 
 var app= express();
@@ -42,10 +45,22 @@ var nav=[
 ];
 var bookRouter  = require('./src/routes/bookRoutes')(nav);
 var adminRouter  = require('./src/routes/adminRoutes')(nav);
-var authRouter  = require('./src/routes/adminRoutes')(nav);
+var authRouter  = require('./src/routes/authRoutes')(nav);
 
 app.use(express.static('public'));
 app.set('views','./src/views');
+
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded());
+app.use(cookieParser());
+app.use(session({
+
+	secret:'library'
+
+}));
+
+require('./src/config/passport')(app);
 
 
 
