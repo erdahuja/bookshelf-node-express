@@ -18,5 +18,7 @@ module.exports = function(app){
 		done(null,email);
 
 	});
+
+	require('./strategies/local.strategy')();
 };
 

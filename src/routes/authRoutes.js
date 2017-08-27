@@ -15,14 +15,28 @@ var router = function(nav){
 
 		mongodb.connect('mongodb://localhost:27017/books',function(err,db){
 
-			console.log(req.body);
-			// var coll = db.collection('auth');
-			// coll.insert({}).toArray(function(err,user){
-			// 	console.log("user created");
 
+			var coll = db.collection('users');
+			coll.insert(req.body,function(err,user){
+				console.log("user created",user);
+				req.login(req.body,function(){
 
-			// });
+					res.redirect('/auth/profile');
+				})
+
+			});
 		})
+
+
+	});
+
+
+	authRouter.route('/profile')
+	.get(function(req,res){
+
+		res.json(req.user);
+		
+
 
 
 	})
