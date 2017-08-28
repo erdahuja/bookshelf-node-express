@@ -31,7 +31,8 @@
     "nodemon": "^1.11.0",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
-    "prettyjson": "^1.2.1"
+    "prettyjson": "^1.2.1",
+    "xml2js": "^0.4.19"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
