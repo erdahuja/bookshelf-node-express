@@ -42,17 +42,29 @@ var getById = function(req,res){
 
 		var coll = db.collection('books');
 		coll.find({_id:id}).toArray(function(err,books){
-			
-			bookService.getBookById(books[0].bookId,function(err,book){
 
+			if(books[0].bookId){
+
+				bookService.getBookById(books[0].bookId,function(err,book){
+
+
+					res.render('bookView',{
+						title:'Books',
+						nav:nav,
+						book:book
+					});
+
+				});
+
+			}else{
 
 				res.render('bookView',{
 					title:'Books',
 					nav:nav,
-					book:book
+					book:books[0]
 				});
+			}
 
-			});
 
 
 		})
